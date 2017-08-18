@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-UK-Currencies-Basic schema 
+UK-Currencies-Basic schema
 Copyright and other information - see http://www.xbrl.org/uk/legal.aspx
 -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:uk-curr="http://www.xbrl.org/uk/cd/currencies/2009-09-01" xmlns:uk-types="http://www.xbrl.org/uk/all/types/2009-09-01" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" targetNamespace="http://www.xbrl.org/uk/cd/currencies/2009-09-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
@@ -20,10 +20,10 @@ Copyright and other information - see http://www.xbrl.org/uk/legal.aspx
     </appinfo>
   </annotation>
   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="../../../all/types/2009-09-01/uk-types-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="uk-types-2009-09-01.xsd" />
   <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/ref/2009-09-01" schemaLocation="../../../all/ref/2009-09-01/uk-cd-ref-2009-09-01.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/common/2009-09-01" schemaLocation="../../../all/common/2009-09-01/uk-common-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/ref/2009-09-01" schemaLocation="uk-cd-ref-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/common/2009-09-01" schemaLocation="uk-common-2009-09-01.xsd" />
   <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" />
   <element id="uk-curr_Afghani" name="Afghani" type="uk-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" abstract="true" nillable="true" />
   <element id="uk-curr_AlgerianDinar" name="AlgerianDinar" type="uk-types:domainItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" abstract="true" nillable="true" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-UK-GAAP-Basic schema 
+UK-GAAP-Basic schema
 2009-09-01 VERSION 1.1
 Copyright and other information - see http://www.xbrl.org/uk/legal.aspx
 -->
@@ -309,14 +309,14 @@ Copyright and other information - see http://www.xbrl.org/uk/legal.aspx
     </appinfo>
   </annotation>
   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
-  <import namespace="http://www.xbrl.org/uk/reports/direp/2009-09-01" schemaLocation="../../../reports/direp/2009-09-01/uk-direp-2009-09-01.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="../../../all/types/2009-09-01/uk-types-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/reports/direp/2009-09-01" schemaLocation="uk-direp-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="uk-types-2009-09-01.xsd" />
   <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
-  <import namespace="http://www.xbrl.org/uk/reports/aurep/2009-09-01" schemaLocation="../../../reports/aurep/2009-09-01/uk-aurep-2009-09-01.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/common/2009-09-01" schemaLocation="../../../all/common/2009-09-01/uk-common-2009-09-01.xsd" />
-  <import namespace="http://www.xbrl.org/uk/cd/business/2009-09-01" schemaLocation="../../../cd/business/2009-09-01/uk-bus-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/reports/aurep/2009-09-01" schemaLocation="uk-aurep-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/common/2009-09-01" schemaLocation="uk-common-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/cd/business/2009-09-01" schemaLocation="uk-bus-2009-09-01.xsd" />
   <import namespace="http://www.xbrl.org/2006/ref" schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/gaap-ref/2009-09-01" schemaLocation="../../../all/gaap-ref/2009-09-01/uk-gaap-ref-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/gaap-ref/2009-09-01" schemaLocation="uk-gaap-ref-2009-09-01.xsd" />
   <element id="uk-gaap_AccountTypeDimension-AppliesToAllDataHeading" name="AccountTypeDimension-AppliesToAllDataHeading" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" abstract="true" nillable="true" />
   <element id="uk-gaap_AccountancyFeesAdministrativeExpenses" name="AccountancyFeesAdministrativeExpenses" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" nillable="true" />
   <element id="uk-gaap_AccountancyFeesCostSales" name="AccountancyFeesCostSales" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" xbrli:balance="debit" nillable="true" />

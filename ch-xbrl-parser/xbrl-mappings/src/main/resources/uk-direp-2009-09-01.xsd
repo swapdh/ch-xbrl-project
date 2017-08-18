@@ -25,11 +25,11 @@ Copyright and other information - see http://www.xbrl.org/uk/legal.aspx
     </appinfo>
   </annotation>
   <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd" />
-  <import namespace="http://www.xbrl.org/uk/cd/business/2009-09-01" schemaLocation="../../../cd/business/2009-09-01/uk-bus-2009-09-01.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="../../../all/types/2009-09-01/uk-types-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/cd/business/2009-09-01" schemaLocation="uk-bus-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/types/2009-09-01" schemaLocation="uk-types-2009-09-01.xsd" />
   <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd" />
   <import namespace="http://www.xbrl.org/2004/ref" schemaLocation="http://www.xbrl.org/2004/ref-2004-08-10.xsd" />
-  <import namespace="http://www.xbrl.org/uk/all/gaap-ref/2009-09-01" schemaLocation="../../../all/gaap-ref/2009-09-01/uk-gaap-ref-2009-09-01.xsd" />
+  <import namespace="http://www.xbrl.org/uk/all/gaap-ref/2009-09-01" schemaLocation="uk-gaap-ref-2009-09-01.xsd" />
   <element id="uk-direp_AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies" name="AccountsAreInAccordanceWithSpecialProvisionsCompaniesActRelatingToSmallCompanies" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" />
   <element id="uk-direp_AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies" name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="duration" nillable="true" />
   <element id="uk-direp_AccruedLumpSumPensionEntitlementUnderDefinedBenefitSchemeDirectors" name="AccruedLumpSumPensionEntitlementUnderDefinedBenefitSchemeDirectors" type="xbrli:monetaryItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" nillable="true" />

@@ -29,7 +29,11 @@
                                 <source>src/main/resources/uk-gaap-full-2009-09-01.xsd</source>
                             </sources>
 
-
+                            <xjbSources>
+                                <xjbSource>
+                                    src/main/resources/bindings.xjb
+                                </xjbSource>
+                            </xjbSources>
                             <!-- Package name of the generated sources. -->
                             <packageName>com.uk.ch.xbrl</packageName>
                         </configuration>
