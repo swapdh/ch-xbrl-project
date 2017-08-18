@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ch-xbrl-parser</artifactId>
+        <groupId>com.uk.ch.xbrl</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>xbrl-mappings</artifactId>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.3.1</version>
+                <executions>
+                    <execution>
+                        <id>xjc-schema1</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Use all XSDs under the west directory for sources here. -->
+                            <sources>
+                                <source>src/main/resources/uk-gaap-full-2009-09-01.xsd</source>
+                            </sources>
+
+
+                            <!-- Package name of the generated sources. -->
+                            <packageName>com.uk.ch.xbrl</packageName>
+                        </configuration>
+                    </execution>
+                    <!--<execution>-->
+                    <!--<id>xjc-schema2</id>-->
+                    <!--<goals>-->
+                    <!--<goal>xjc</goal>-->
+                    <!--</goals>-->
+                    <!--<configuration>-->
+                    <!--&lt;!&ndash; Use all XSDs under the east directory for sources here. &ndash;&gt;-->
+                    <!--<sources>-->
+                    <!--<source>src/main/xsds/east</source>-->
+                    <!--</sources>-->
+
+                    <!--&lt;!&ndash; Package name of the generated sources. &ndash;&gt;-->
+                    <!--<packageName>se.east</packageName>-->
+
+                    <!--&lt;!&ndash;-->
+                    <!--Don't clear the output directory before generating the sources.-->
+                    <!--Clearing the output directory removes the se.west schema from above.-->
+                    <!--&ndash;&gt;-->
+                    <!--<clearOutputDir>false</clearOutputDir>-->
+                    <!--</configuration>-->
+                    <!--</execution>-->
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
