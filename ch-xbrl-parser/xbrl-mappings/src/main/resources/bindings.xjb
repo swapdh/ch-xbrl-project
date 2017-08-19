@@ -30,8 +30,8 @@
                 </jxb:bindings>
     </jxb:bindings>
     <jxb:bindings schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd" node="/xs:schema">
-        <jxb:bindings node="//xs:element[@name='footNote']">
-                            <jxb:factoryMethod name="footNote2"/>
+        <jxb:bindings node="//xs:element[@name='Footnote']">
+                            <jxb:factoryMethod name="Footnote2"/>
                         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Publisher']">
                                     <jxb:factoryMethod name="Publisher1"/>
@@ -44,7 +44,7 @@
                                                 </jxb:bindings>
     </jxb:bindings>
 
-    <jxb:bindings schemaLocation="http://www.xbrl.org/2006/ref-2004-08-10.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2004/ref-2004-08-10.xsd" node="/xs:schema">
             <jxb:bindings node="//xs:element[@name='Publisher']">
                                         <jxb:factoryMethod name="Publisher2"/>
                                     </jxb:bindings>
@@ -56,7 +56,7 @@
                                                             </jxb:bindings>
         </jxb:bindings>
 
-    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-gaap-2009-09-01.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="uk-gaap-2009-09-01.xsd" node="/xs:schema">
             <jxb:bindings node="//xs:element[@name='CharitableDonations']">
                 <jxb:factoryMethod name="CharitableDonations1"/>
             </jxb:bindings>
@@ -67,7 +67,7 @@
                                             <jxb:factoryMethod name="UseCountriesDimensionToIdentifyCountryExplanation1"/>
                                         </jxb:bindings>
     </jxb:bindings>
-    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-direp-2009-09-01.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="uk-direp-2009-09-01.xsd" node="/xs:schema">
                 <jxb:bindings node="//xs:element[@name='AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies']">
                     <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies2"/>
                 </jxb:bindings>
@@ -108,7 +108,7 @@
 
         </jxb:bindings>
 
-    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-bus-2009-09-01.xsd" node="/xs:schema">
+    <jxb:bindings schemaLocation="uk-bus-2009-09-01.xsd" node="/xs:schema">
             <jxb:bindings node="//xs:element[@name='OrdinaryShareClass1']">
                 <jxb:factoryMethod name="OrdinaryShareClass12"/>
             </jxb:bindings>
