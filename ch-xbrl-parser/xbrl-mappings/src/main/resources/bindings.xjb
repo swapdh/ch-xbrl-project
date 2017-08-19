@@ -15,6 +15,137 @@
                 <jxb:property name="title2"/>
             </jxb:bindings>
         </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='documentation']">
+            <jxb:factoryMethod name="documentation1"/>
+        </jxb:bindings>
     </jxb:bindings>
+
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd" node="/xs:schema">
+        <jxb:bindings node="//xs:element[@name='documentation']">
+            <jxb:factoryMethod name="documentation2"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='footnote']">
+                    <jxb:factoryMethod name="footnote1"/>
+                </jxb:bindings>
+    </jxb:bindings>
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd" node="/xs:schema">
+        <jxb:bindings node="//xs:element[@name='footNote']">
+                            <jxb:factoryMethod name="footNote2"/>
+                        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='Publisher']">
+                                    <jxb:factoryMethod name="Publisher1"/>
+                                </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='Name']">
+                                            <jxb:factoryMethod name="Name1"/>
+                                        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='Number']">
+                                                    <jxb:factoryMethod name="Number1"/>
+                                                </jxb:bindings>
+    </jxb:bindings>
+
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2006/ref-2004-08-10.xsd" node="/xs:schema">
+            <jxb:bindings node="//xs:element[@name='Publisher']">
+                                        <jxb:factoryMethod name="Publisher2"/>
+                                    </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='Name']">
+                                                        <jxb:factoryMethod name="Name2"/>
+                                                    </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='Number']">
+                                                                <jxb:factoryMethod name="Number2"/>
+                                                            </jxb:bindings>
+        </jxb:bindings>
+
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-gaap-2009-09-01.xsd" node="/xs:schema">
+            <jxb:bindings node="//xs:element[@name='CharitableDonations']">
+                <jxb:factoryMethod name="CharitableDonations1"/>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies']">
+                            <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies1"/>
+                        </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='UseCountriesDimensionToIdentifyCountryExplanation']">
+                                            <jxb:factoryMethod name="UseCountriesDimensionToIdentifyCountryExplanation1"/>
+                                        </jxb:bindings>
+    </jxb:bindings>
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-direp-2009-09-01.xsd" node="/xs:schema">
+                <jxb:bindings node="//xs:element[@name='AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies']">
+                    <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies2"/>
+                </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='CharitableDonations']">
+                                <jxb:factoryMethod name="CharitableDonations2"/>
+                            </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='OrdinaryShareClass1']">
+                                                <jxb:factoryMethod name="OrdinaryShareClass11"/>
+                </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='OrdinaryShareClass2']">
+                    <jxb:factoryMethod name="OrdinaryShareClass21"/>
+                </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='OrdinaryShareClass3']">
+                                    <jxb:factoryMethod name="OrdinaryShareClass31"/>
+                                </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='OrdinaryShareClass4']">
+                                    <jxb:factoryMethod name="OrdinaryShareClass41"/>
+                                </jxb:bindings>
+
+                <jxb:bindings node="//xs:element[@name='OrdinaryShareClass5']">
+                                    <jxb:factoryMethod name="OrdinaryShareClass51"/>
+                                </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='PreferenceShareClass1']">
+                                                                     <jxb:factoryMethod name="PreferenceShareClass11"/>
+                                                                 </jxb:bindings>
+                            <jxb:bindings node="//xs:element[@name='PreferenceShareClass2']">
+                                                                                 <jxb:factoryMethod name="PreferenceShareClass21"/>
+                                                                             </jxb:bindings>
+                            <jxb:bindings node="//xs:element[@name='PreferenceShareClass3']">
+                                                                                 <jxb:factoryMethod name="PreferenceShareClass31"/>
+                                                                             </jxb:bindings>
+                            <jxb:bindings node="//xs:element[@name='PreferenceShareClass4']">
+                                                                                 <jxb:factoryMethod name="PreferenceShareClass41"/>
+                                                                             </jxb:bindings>
+                            <jxb:bindings node="//xs:element[@name='PreferenceShareClass5']">
+                                                                                 <jxb:factoryMethod name="PreferenceShareClass51"/>
+                                                                             </jxb:bindings>
+
+        </jxb:bindings>
+
+    <jxb:bindings schemaLocation="http://www.xbrl.org/2003/uk-bus-2009-09-01.xsd" node="/xs:schema">
+            <jxb:bindings node="//xs:element[@name='OrdinaryShareClass1']">
+                <jxb:factoryMethod name="OrdinaryShareClass12"/>
+            </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='OrdinaryShareClass2']">
+                            <jxb:factoryMethod name="OrdinaryShareClass22"/>
+                        </jxb:bindings>
+
+            <jxb:bindings node="//xs:element[@name='OrdinaryShareClass3']">
+                                        <jxb:factoryMethod name="OrdinaryShareClass32"/>
+                                    </jxb:bindings>
+             <jxb:bindings node="//xs:element[@name='OrdinaryShareClass4']">
+                                         <jxb:factoryMethod name="OrdinaryShareClass42"/>
+                                     </jxb:bindings>
+             <jxb:bindings node="//xs:element[@name='OrdinaryShareClass5']">
+                                         <jxb:factoryMethod name="OrdinaryShareClass52"/>
+                                     </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='PreferenceShareClass1']">
+                                                     <jxb:factoryMethod name="PreferenceShareClass12"/>
+                                                 </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='PreferenceShareClass2']">
+                                                                 <jxb:factoryMethod name="PreferenceShareClass22"/>
+                                                             </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='PreferenceShareClass3']">
+                                                                 <jxb:factoryMethod name="PreferenceShareClass32"/>
+                                                             </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='PreferenceShareClass4']">
+                                                                 <jxb:factoryMethod name="PreferenceShareClass42"/>
+                                                             </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='PreferenceShareClass5']">
+                                                                 <jxb:factoryMethod name="PreferenceShareClass52"/>
+                                                             </jxb:bindings>
+
+
+            <jxb:bindings node="//xs:element[@name='UseCountriesDimensionToIdentifyCountryExplanation']">
+                                                        <jxb:factoryMethod name="UseCountriesDimensionToIdentifyCountryExplanation2"/>
+                                                    </jxb:bindings>
+        </jxb:bindings>
+
 
 </jxb:bindings>
