@@ -27,12 +27,21 @@
         </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='footnote']">
                     <jxb:factoryMethod name="footnote1"/>
-                </jxb:bindings>
+        </jxb:bindings>
+         <jxb:bindings node="//xs:element[@name='part']">
+                    <jxb:factoryMethod name="part1"/>
+          </jxb:bindings>
+    </jxb:bindings>
+
+     <jxb:bindings schemaLocation="uk-gaap-ref-2009-09-01.xsd" node="/xs:schema">
+             <jxb:bindings node="//xs:element[@name='Part']">
+                      <jxb:factoryMethod name="Part2"/>
+              </jxb:bindings>
     </jxb:bindings>
     <jxb:bindings schemaLocation="http://www.xbrl.org/2006/ref-2006-02-27.xsd" node="/xs:schema">
         <jxb:bindings node="//xs:element[@name='Footnote']">
-                            <jxb:factoryMethod name="Footnote2"/>
-                        </jxb:bindings>
+                   <jxb:factoryMethod name="Footnote2"/>
+          </jxb:bindings>
         <jxb:bindings node="//xs:element[@name='Publisher']">
                                     <jxb:factoryMethod name="Publisher1"/>
                                 </jxb:bindings>
@@ -42,18 +51,126 @@
         <jxb:bindings node="//xs:element[@name='Number']">
                                                     <jxb:factoryMethod name="Number1"/>
                                                 </jxb:bindings>
+         <jxb:bindings node="//xs:element[@name='IssueDate']">
+                <jxb:factoryMethod name="IssueDate1"/>
+          </jxb:bindings>
+          <jxb:bindings node="//xs:element[@name='Chapter']">
+                         <jxb:factoryMethod name="Chapter1"/>
+           </jxb:bindings>
+           <jxb:bindings node="//xs:element[@name='Article']">
+                <jxb:factoryMethod name="Article1"/>
+           </jxb:bindings>
+            <jxb:bindings node="//xs:element[@name='Note']">
+                           <jxb:factoryMethod name="Note1"/>
+             </jxb:bindings>
+             <jxb:bindings node="//xs:element[@name='Section']">
+                         <jxb:factoryMethod name="Section1"/>
+              </jxb:bindings>
+               <jxb:bindings node="//xs:element[@name='Subsection']">
+                          <jxb:factoryMethod name="Subsection1"/>
+               </jxb:bindings>
+             <jxb:bindings node="//xs:element[@name='Paragraph']">
+                          <jxb:factoryMethod name="Paragraph1"/>
+               </jxb:bindings>
+               <jxb:bindings node="//xs:element[@name='Subparagraph']">
+                           <jxb:factoryMethod name="Subparagraph1"/>
+                </jxb:bindings>
+                 <jxb:bindings node="//xs:element[@name='Clause']">
+                         <jxb:factoryMethod name="Clause1"/>
+                  </jxb:bindings>
+                   <jxb:bindings node="//xs:element[@name='Subclause']">
+                        <jxb:factoryMethod name="Subclause1"/>
+                   </jxb:bindings>
+                   <jxb:bindings node="//xs:element[@name='Appendix']">
+                       <jxb:factoryMethod name="Appendix1"/>
+                    </jxb:bindings>
+                   <jxb:bindings node="//xs:element[@name='Example']">
+                        <jxb:factoryMethod name="Example1"/>
+                   </jxb:bindings>
+                   <jxb:bindings node="//xs:element[@name='Page']">
+                        <jxb:factoryMethod name="Page1"/>
+                   </jxb:bindings>
+                    <jxb:bindings node="//xs:element[@name='Exhibit']">
+                          <jxb:factoryMethod name="Exhibit1"/>
+                     </jxb:bindings>
+
+                     <jxb:bindings node="//xs:element[@name='Sentence']">
+                            <jxb:factoryMethod name="Sentence1"/>
+                     </jxb:bindings>
+                      <jxb:bindings node="//xs:element[@name='URI']">
+                            <jxb:factoryMethod name="URI1"/>
+                      </jxb:bindings>
+                      <jxb:bindings node="//xs:element[@name='URIDate']">
+                            <jxb:factoryMethod name="URIDate1"/>
+                        </jxb:bindings>
+
     </jxb:bindings>
 
     <jxb:bindings schemaLocation="http://www.xbrl.org/2004/ref-2004-08-10.xsd" node="/xs:schema">
             <jxb:bindings node="//xs:element[@name='Publisher']">
                                         <jxb:factoryMethod name="Publisher2"/>
-                                    </jxb:bindings>
+             </jxb:bindings>
             <jxb:bindings node="//xs:element[@name='Name']">
-                                                        <jxb:factoryMethod name="Name2"/>
-                                                    </jxb:bindings>
+                       <jxb:factoryMethod name="Name2"/>
+             </jxb:bindings>
             <jxb:bindings node="//xs:element[@name='Number']">
-                                                                <jxb:factoryMethod name="Number2"/>
-                                                            </jxb:bindings>
+                    <jxb:factoryMethod name="Number2"/>
+             </jxb:bindings>
+              <jxb:bindings node="//xs:element[@name='IssueDate']">
+                    <jxb:factoryMethod name="IssueDate2"/>
+              </jxb:bindings>
+               <jxb:bindings node="//xs:element[@name='Chapter']">
+                   <jxb:factoryMethod name="Chapter2"/>
+               </jxb:bindings>
+                <jxb:bindings node="//xs:element[@name='Article']">
+                               <jxb:factoryMethod name="Article2"/>
+                 </jxb:bindings>
+                  <jxb:bindings node="//xs:element[@name='Note']">
+                           <jxb:factoryMethod name="Note2"/>
+                  </jxb:bindings>
+                  <jxb:bindings node="//xs:element[@name='Section']">
+                          <jxb:factoryMethod name="Section2"/>
+                   </jxb:bindings>
+                    <jxb:bindings node="//xs:element[@name='Subsection']">
+                          <jxb:factoryMethod name="Subsection2"/>
+                    </jxb:bindings>
+                    <jxb:bindings node="//xs:element[@name='Paragraph']">
+                         <jxb:factoryMethod name="Paragraph2"/>
+                    </jxb:bindings>
+                     <jxb:bindings node="//xs:element[@name='Subparagraph']">
+                          <jxb:factoryMethod name="Subparagraph2"/>
+                     </jxb:bindings>
+                    <jxb:bindings node="//xs:element[@name='Clause']">
+                          <jxb:factoryMethod name="Clause2"/>
+                     </jxb:bindings>
+                      <jxb:bindings node="//xs:element[@name='Subclause']">
+                           <jxb:factoryMethod name="Subclause2"/>
+                      </jxb:bindings>
+                     <jxb:bindings node="//xs:element[@name='Appendix']">
+                           <jxb:factoryMethod name="Appendix2"/>
+                      </jxb:bindings>
+                     <jxb:bindings node="//xs:element[@name='Example']">
+                          <jxb:factoryMethod name="Example2"/>
+                      </jxb:bindings>
+                      <jxb:bindings node="//xs:element[@name='Page']">
+                             <jxb:factoryMethod name="Page2"/>
+                      </jxb:bindings>
+                        <jxb:bindings node="//xs:element[@name='Exhibit']">
+                               <jxb:factoryMethod name="Exhibit2"/>
+                       </jxb:bindings>
+                       <jxb:bindings node="//xs:element[@name='Footnote']">
+                             <jxb:factoryMethod name="Footnote3"/>
+                        </jxb:bindings>
+                          <jxb:bindings node="//xs:element[@name='Sentence']">
+                                  <jxb:factoryMethod name="Sentence2"/>
+                          </jxb:bindings>
+                         <jxb:bindings node="//xs:element[@name='URI']">
+                                   <jxb:factoryMethod name="URI2"/>
+                          </jxb:bindings>
+                           <jxb:bindings node="//xs:element[@name='URIDate']">
+                                  <jxb:factoryMethod name="URIDate2"/>
+                           </jxb:bindings>
+
         </jxb:bindings>
 
     <jxb:bindings schemaLocation="uk-gaap-2009-09-01.xsd" node="/xs:schema">
@@ -61,15 +178,16 @@
                 <jxb:factoryMethod name="CharitableDonations1"/>
             </jxb:bindings>
             <jxb:bindings node="//xs:element[@name='AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies']">
-                            <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies1"/>
-                        </jxb:bindings>
+                            <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium_sizedCompanies1"/>
+            </jxb:bindings>
             <jxb:bindings node="//xs:element[@name='UseCountriesDimensionToIdentifyCountryExplanation']">
-                                            <jxb:factoryMethod name="UseCountriesDimensionToIdentifyCountryExplanation1"/>
-                                        </jxb:bindings>
+                          <jxb:factoryMethod name="UseCountriesDimensionToIdentifyCountryExplanation1"/>
+            </jxb:bindings>
+
     </jxb:bindings>
     <jxb:bindings schemaLocation="uk-direp-2009-09-01.xsd" node="/xs:schema">
                 <jxb:bindings node="//xs:element[@name='AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies']">
-                    <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium-sizedCompanies2"/>
+                    <jxb:factoryMethod name="AccountsAreInAccordanceWithSpecialProvisionsInSection4453CompaniesActRelatingToMedium_sizedCompanies2"/>
                 </jxb:bindings>
                 <jxb:bindings node="//xs:element[@name='CharitableDonations']">
                                 <jxb:factoryMethod name="CharitableDonations2"/>
