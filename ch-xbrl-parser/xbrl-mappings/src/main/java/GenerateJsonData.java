@@ -15,7 +15,6 @@ public class GenerateJsonData implements Callable<GenerateJsonData> {
         this.file = file;
     }
 
-
     public GenerateJsonData call() throws Exception {
         BufferedWriter bw = null;
         FileWriter fw = null;

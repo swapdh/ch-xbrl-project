@@ -15,7 +15,6 @@ public class GenerateJsonFromXBRLFiles {
 
         Collection<Callable<GenerateJsonData>> tasks = new ArrayList<Callable<GenerateJsonData>>();
         ExecutorService executorService = Executors.newFixedThreadPool(6);
-
         try {
             String rootDir=args[0]; // xbrl files folder
             File dir = new File(rootDir);
