@@ -11,35 +11,42 @@ import java.util.concurrent.Executors;
  */
 public class GenerateJsonFromXBRLFiles {
 
+    public static void main(String args[]) {
 
-    public static void main(String args[]){
-
-        ExecutorService executorService = Executors.newFixedThreadPool(6);
         Collection<Callable<GenerateJsonData>> tasks = new ArrayList<Callable<GenerateJsonData>>();
+        ExecutorService executorService = Executors.newFixedThreadPool(6);
 
         try {
-        File dir = new File("/Users/himandhk/sampleXBRL/");// xbrl files folder
-        File[] directoryListing = dir.listFiles();
-
-        if (directoryListing != null) {
-            for (File child : directoryListing) {
-
-                GenerateJsonData generateJsonData = new GenerateJsonData(child);
-
-                tasks.add(generateJsonData);
-            }
-
-                executorService.invokeAll(tasks);
-
-
-        }
+            String rootDir=args[0]; // xbrl files folder
+            File dir = new File(rootDir);
+            findFiles(dir, tasks);
+            executorService.invokeAll(tasks);
         } catch (Exception e) {
 
             e.printStackTrace();
 
-        }finally {
+        } finally {
             executorService.shutdown();
         }
 
+    }
+
+    @SuppressWarnings("unchecked")
+    private static File findFiles(File parentDir,Collection<Callable<GenerateJsonData>> tasks) throws Exception {
+
+        File file = null;
+        File[] directoryListing = parentDir.listFiles();
+
+        for (File child : directoryListing) {
+            if (child.isDirectory()) {
+                file= findFiles(child,tasks);
+            } else {
+                GenerateJsonData generateJsonData = new GenerateJsonData(child);
+                tasks.add(generateJsonData);
+            }
+
         }
+        return file;
+
+    }
 }
