@@ -16,7 +16,7 @@ public class LoadXBRLInDB {
 
     public static void main(String args[]){
         Collection<Callable<GenerateDataInDB>> tasks = new ArrayList<Callable<GenerateDataInDB>>();
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ExecutorService executorService = Executors.newFixedThreadPool(30);
         try {
             String rootDir=args[0]; // xbrl files folder
            // String rootDir="/Users/himandhk/sampleXBRL/";
