@@ -18,8 +18,8 @@ public class LoadXBRLInDB {
         Collection<Callable<GenerateDataInDB>> tasks = new ArrayList<Callable<GenerateDataInDB>>();
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         try {
-            //String rootDir=args[0]; // xbrl files folder
-            String rootDir="/Users/himandhk/sampleXBRL/";
+            String rootDir=args[0]; // xbrl files folder
+           // String rootDir="/Users/himandhk/sampleXBRL/";
             File dir = new File(rootDir);
             findFiles(dir, tasks);
             executorService.invokeAll(tasks);
