@@ -26,7 +26,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,bah4400,arelle,1000,pgSemantic").start();
+                    "--plugins","xbrlDB","--store-to-XBRL-DB","Trusted_Connection=yes","localhost,5432,postgres,12345,arelle_db,1000,pgSemantic").start();
 
             InputStream is = process.getInputStream();
             handleStream(process, startTime, is);
