@@ -1,6 +1,6 @@
 
 
-import com.uk.ch.xbrl.Xbrl;
+//import com.uk.ch.xbrl.Xbrl;
 
 import javax.naming.*;
 import javax.naming.Context;
@@ -16,17 +16,17 @@ import java.util.Hashtable;
 public class GenerateXBRLREport {
     public static void main(String args[]){
         System.out.print("hi");
-        try {
+//        try {
 
-            File file = new File("/Users/himandhk/tempData/report.xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(Xbrl.class);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            Xbrl xbrl = (Xbrl) jaxbUnmarshaller.unmarshal(file);
-            System.out.println(xbrl.);
+//            File file = new File("/Users/Swapnil/tempData/report.html");
+//            JAXBContext jaxbContext = JAXBContext.newInstance(Xbrl.class);
+//            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+//            Xbrl xbrl = (Xbrl) jaxbUnmarshaller.unmarshal(file);
+//            System.out.println(xbrl.);
 
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
+//        } catch (JAXBException e) {
+//            e.printStackTrace();
+//        }
 
 
     }

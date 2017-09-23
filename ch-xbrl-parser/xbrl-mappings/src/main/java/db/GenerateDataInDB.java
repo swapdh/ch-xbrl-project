@@ -1,6 +1,7 @@
 package db;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.Callable;
@@ -17,7 +18,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
     }
 
     public GenerateDataInDB call() throws Exception {
-        Process process;
+        Process process = null;
 
         try {
             long startTime = Calendar.getInstance().getTimeInMillis();
@@ -25,21 +26,37 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,test_db,90,postgres").start();
+                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,bah4400,arelle,1000,pgSemantic").start();
 
-            long endTime = Calendar.getInstance().getTimeInMillis();
-            System.out.println("Done in " + (endTime - startTime));
+            InputStream is = process.getInputStream();
+            handleStream(process, startTime, is);
 
             return null;
         } catch (Exception e) {
-
+            if(process != null){
+                process.destroy();
+            }
             e.printStackTrace();
 
         }
         return null;
     }
 
+    private void handleStream(Process process, long startTime, InputStream is) throws IOException {
 
+        try (InputStreamReader isr = new InputStreamReader(is);BufferedReader br = new BufferedReader(isr)){
+            String line;
+
+//            System.out.printf("Output of running %s is:", Arrays.toString(args));
+
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            System.out.println(process.isAlive());
+            long endTime = Calendar.getInstance().getTimeInMillis();
+            System.out.println("Done in " + (endTime - startTime) / 1000 + "secs");
+        }
+    }
 
 
 }

@@ -10,34 +10,46 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>xbrl-mappings</artifactId>
-
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>2.3.1</version>
-                <executions>
-                    <execution>
-                        <id>xjc-schema1</id>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                        <configuration>
-                            <!-- Use all XSDs under the west directory for sources here. -->
-                            <sources>
-                                <source>src/main/resources/uk-gaap-full-2009-09-01.xsd</source>
-                            </sources>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-                            <xjbSources>
-                                <xjbSource>
-                                    src/main/resources/bindings.xjb
-                                </xjbSource>
-                            </xjbSources>
-                            <!-- Package name of the generated sources. -->
-                            <packageName>com.uk.ch.xbrl</packageName>
-                        </configuration>
-                    </execution>
+    <!--<build>-->
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>jaxb2-maven-plugin</artifactId>-->
+                <!--<version>2.3.1</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>xjc-schema1</id>-->
+                        <!--<goals>-->
+                            <!--<goal>xjc</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--&lt;!&ndash; Use all XSDs under the west directory for sources here. &ndash;&gt;-->
+                            <!--<sources>-->
+                                <!--<source>src/main/resources/uk-gaap-full-2009-09-01.xsd</source>-->
+                            <!--</sources>-->
+
+                            <!--<xjbSources>-->
+                                <!--<xjbSource>-->
+                                    <!--src/main/resources/bindings.xjb-->
+                                <!--</xjbSource>-->
+                            <!--</xjbSources>-->
+                            <!--&lt;!&ndash; Package name of the generated sources. &ndash;&gt;-->
+                            <!--<packageName>com.uk.ch.xbrl</packageName>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                     <!--<execution>-->
                     <!--<id>xjc-schema2</id>-->
                     <!--<goals>-->
@@ -46,11 +58,11 @@
                     <!--<configuration>-->
                     <!--&lt;!&ndash; Use all XSDs under the east directory for sources here. &ndash;&gt;-->
                     <!--<sources>-->
-                    <!--<source>src/main/xsds/east</source>-->
+                        <!--<source>src/main/resources/2009-06-21/uk-gaap-ae-2009-06-21.xsd</source>-->
                     <!--</sources>-->
 
                     <!--&lt;!&ndash; Package name of the generated sources. &ndash;&gt;-->
-                    <!--<packageName>se.east</packageName>-->
+                    <!--<packageName>com.uk.ch.xbrl.20090621</packageName>-->
 
                     <!--&lt;!&ndash;-->
                     <!--Don't clear the output directory before generating the sources.-->
@@ -59,10 +71,10 @@
                     <!--<clearOutputDir>false</clearOutputDir>-->
                     <!--</configuration>-->
                     <!--</execution>-->
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+                <!--</executions>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
+    <!--</build>-->
 
 
 </project>
