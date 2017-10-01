@@ -21,7 +21,7 @@ public class LoadXBRLInDB {
         ExecutorService executorService = Executors.newFixedThreadPool(39);
         try {
             String rootDir=args[0]; // xbrl files folder
-           // String rootDir="/Users/himandhk/sampleXBRL/";
+           // String rootDir="/xbrl/test/";
             File dir = new File(rootDir);
             findFiles(dir, tasks);
             Stream<List<Callable<GenerateDataInDB>>> batches = batches(tasks, 10);
@@ -66,7 +66,7 @@ public class LoadXBRLInDB {
             if (child.isDirectory()) {
                 file= findFiles(child,tasks);
             } else {
-                GenerateDataInDB generateData = new GenerateDataInDB(child);
+                GenerateDataInDB generateData = new GenerateDataInDB(child,parentDir);
                 tasks.add(generateData);
             }
 
