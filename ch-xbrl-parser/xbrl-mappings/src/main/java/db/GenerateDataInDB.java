@@ -32,7 +32,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle_db,1000,pgSemantic","--abortOnMajorError", "--logLevel=info"
+                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle,1000,pgSemantic","--abortOnMajorError", "--logLevel=info"
 
             ).start();
 
@@ -59,16 +59,16 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("Loading terminated")) {
-                    if(!Files.isDirectory(Paths.get(parentDir.getPath() + "/failed/"))) {
-                        Files.createDirectory(Paths.get(parentDir.getPath() + "/failed/"));
+                    if(!Files.isDirectory(Paths.get(parentDir.getPath() + "/../failed/"))) {
+                        Files.createDirectory(Paths.get(parentDir.getPath() + "/../failed/"));
                     }
-                    Files.move(Paths.get(filename), Paths.get(parentDir.getPath() + "/failed/" + file.getName()));
+                    Files.move(Paths.get(filename), Paths.get(parentDir.getPath() + "/../failed/" + file.getName()));
                 }
                 System.out.println(line);
-                if (Files.notExists(Paths.get(parentDir.getPath()+ "/log.txt"))) {
-                    Files.createFile(Paths.get(parentDir.getPath()+ "/log.txt"));
+                if (Files.notExists(Paths.get(parentDir.getPath()+ "/../log.txt"))) {
+                    Files.createFile(Paths.get(parentDir.getPath()+ "/../log.txt"));
                 }
-                Files.write(Paths.get(parentDir.getPath() + "/log.txt"), (line+"\n").getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(parentDir.getPath() + "/../log.txt"), (line+"\n").getBytes(), StandardOpenOption.APPEND);
             }
             System.out.println(process.isAlive());
             long endTime = Calendar.getInstance().getTimeInMillis();
