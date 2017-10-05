@@ -32,7 +32,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--noCertificateCheck","--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle_db,1000,pgSemantic","--abortOnMajorError",
+                    "--noCertificateCheck","--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,bah4400,arelle,1000,pgSemantic","--abortOnMajorError",
                     "--logLevel=info").start();
 
             InputStream is = process.getInputStream();
@@ -58,20 +58,20 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("Loading terminated")) {
-                    if(!Files.isDirectory(Paths.get(parentDir + "/failed/"))) {
-                        Files.createDirectory(Paths.get(parentDir + "/failed/"));
+                    if(!Files.isDirectory(Paths.get(parentDir + "/../failed/"))) {
+                        Files.createDirectory(Paths.get(parentDir + "/../failed/"));
                     }
-                    Files.move(Paths.get(filename), Paths.get(parentDir+ "/failed/" + file.getName()));
+                    Files.move(Paths.get(filename), Paths.get(parentDir+ "/../failed/" + file.getName()));
                     System.out.println(filename);
                     logStr="Failed "+filename+"\n";
                 }
                 System.out.println(line);
-                if (Files.notExists(Paths.get(parentDir+ "/log.txt"))) {
-                    Files.createFile(Paths.get(parentDir+ "/log.txt"));
+                if (Files.notExists(Paths.get(parentDir+ "/../log.txt"))) {
+                    Files.createFile(Paths.get(parentDir+ "/../log.txt"));
                 }
 
                 logStr=logStr+line+"\n";
-                Files.write(Paths.get(parentDir+ "/log.txt"), (logStr).getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(parentDir+ "/../log.txt"), (logStr).getBytes(), StandardOpenOption.APPEND);
                 logStr="";
             }
             System.out.println(process.isAlive());
