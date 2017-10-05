@@ -1,7 +1,10 @@
 package db;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.stream.IntStream;
@@ -12,13 +15,13 @@ import java.util.stream.Stream;
  */
 public class LoadXBRLInDB {
 
-    public static void main(String args[]) {
+    public static void main(String args[]){
         long startTime = System.currentTimeMillis();
         List<Callable<GenerateDataInDB>> tasks = new ArrayList<Callable<GenerateDataInDB>>();
         ExecutorService executorService = Executors.newFixedThreadPool(39);
         try {
-            String rootDir = args[0]; // xbrl files folder
-            // String rootDir="/xbrl/test/";
+            String rootDir=args[0]; // xbrl files folder
+            //String rootDir="/xbrl/test/";
             File dir = new File(rootDir);
             findFiles(dir, tasks);
             Stream<List<Callable<GenerateDataInDB>>> batches = batches(tasks, 10);
@@ -39,7 +42,7 @@ public class LoadXBRLInDB {
                     }
                 });
 
-                System.out.println("Batch finished of size " + batch.size());
+                System.out.println("Batch finished of size "+batch.size());
             });
 
         } catch (Exception e) {
@@ -49,20 +52,21 @@ public class LoadXBRLInDB {
         } finally {
             executorService.shutdown();
         }
-        System.out.println("Total time taken " + (System.currentTimeMillis() - startTime) / 1000 + "secs");
+        System.out.println("Total time taken " + (System.currentTimeMillis() - startTime)/1000+ "secs");
     }
 
 
-    private static File findFiles(File parentDir, List<Callable<GenerateDataInDB>> tasks) throws Exception {
+
+    private static File findFiles(File parentDir,List<Callable<GenerateDataInDB>> tasks) throws Exception {
 
         File file = null;
         File[] directoryListing = parentDir.listFiles();
 
         for (File child : directoryListing) {
             if (child.isDirectory()) {
-                file = findFiles(child, tasks);
+                file= findFiles(child,tasks);
             } else {
-                GenerateDataInDB generateData = new GenerateDataInDB(child, parentDir);
+                GenerateDataInDB generateData = new GenerateDataInDB(child,parentDir.getAbsolutePath());
                 tasks.add(generateData);
             }
 

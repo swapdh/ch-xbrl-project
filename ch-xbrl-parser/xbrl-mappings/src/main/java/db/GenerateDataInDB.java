@@ -15,10 +15,10 @@ import java.util.concurrent.Callable;
  */
 public class GenerateDataInDB implements Callable<GenerateDataInDB> {
     private File file = null;
-    private File parentDir= null;
+    private String parentDir= null;
     // private static final String FILENAME = "/Users/himandhk/jsonData/";// Json output folder
 
-    GenerateDataInDB(File file,File parentDir) {
+    GenerateDataInDB(File file,String parentDir) {
         this.file = file;
         this.parentDir=parentDir;
     }
@@ -32,9 +32,8 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle,1000,pgSemantic","--abortOnMajorError", "--logLevel=info"
-
-            ).start();
+                    "--noCertificateCheck","--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle_db,1000,pgSemantic","--abortOnMajorError",
+                    "--logLevel=info").start();
 
             InputStream is = process.getInputStream();
             handleStream(process, startTime, is,intputFile.getAbsoluteFile().toString());
@@ -54,21 +53,26 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
 
         try (InputStreamReader isr = new InputStreamReader(is);BufferedReader br = new BufferedReader(isr)){
             String line;
-
+            String logStr="";
 //            System.out.printf("Output of running %s is:", Arrays.toString(args));
 
             while ((line = br.readLine()) != null) {
                 if (line.contains("Loading terminated")) {
-                    if(!Files.isDirectory(Paths.get(parentDir.getPath() + "/../failed/"))) {
-                        Files.createDirectory(Paths.get(parentDir.getPath() + "/../failed/"));
+                    if(!Files.isDirectory(Paths.get(parentDir + "/failed/"))) {
+                        Files.createDirectory(Paths.get(parentDir + "/failed/"));
                     }
-                    Files.move(Paths.get(filename), Paths.get(parentDir.getPath() + "/../failed/" + file.getName()));
+                    Files.move(Paths.get(filename), Paths.get(parentDir+ "/failed/" + file.getName()));
+                    System.out.println(filename);
+                    logStr="Failed "+filename+"\n";
                 }
                 System.out.println(line);
-                if (Files.notExists(Paths.get(parentDir.getPath()+ "/../log.txt"))) {
-                    Files.createFile(Paths.get(parentDir.getPath()+ "/../log.txt"));
+                if (Files.notExists(Paths.get(parentDir+ "/log.txt"))) {
+                    Files.createFile(Paths.get(parentDir+ "/log.txt"));
                 }
-                Files.write(Paths.get(parentDir.getPath() + "/../log.txt"), (line+"\n").getBytes(), StandardOpenOption.APPEND);
+
+                logStr=logStr+line+"\n";
+                Files.write(Paths.get(parentDir+ "/log.txt"), (logStr).getBytes(), StandardOpenOption.APPEND);
+                logStr="";
             }
             System.out.println(process.isAlive());
             long endTime = Calendar.getInstance().getTimeInMillis();
