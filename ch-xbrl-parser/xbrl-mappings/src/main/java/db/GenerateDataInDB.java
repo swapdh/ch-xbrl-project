@@ -3,11 +3,9 @@ package db;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Properties;
 import java.util.concurrent.Callable;
 
 /**
@@ -32,7 +30,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
             System.out.println(" File Processing " + intputFile.getAbsoluteFile());
 
             process= new ProcessBuilder("/Applications/Arelle.app/Contents/MacOS/arelleCmdLine","-f",intputFile.getAbsoluteFile().toString(),
-                    "--noCertificateCheck","--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,bah4400,arelle,1000,pgSemantic","--abortOnMajorError",
+                    "--noCertificateCheck","--plugins","xbrlDB","--store-to-XBRL-DB","localhost,5432,postgres,12345,arelle,1000,pgSemantic","--abortOnMajorError",
                     "--logLevel=info").start();
 
             InputStream is = process.getInputStream();
@@ -57,7 +55,7 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
 //            System.out.printf("Output of running %s is:", Arrays.toString(args));
 
             while ((line = br.readLine()) != null) {
-                if (line.contains("Loading terminated")) {
+                if (line.contains("Loading terminated") || line.contains("ProgrammingError")) {
                     if(!Files.isDirectory(Paths.get(parentDir + "/../failed/"))) {
                         Files.createDirectory(Paths.get(parentDir + "/../failed/"));
                     }
