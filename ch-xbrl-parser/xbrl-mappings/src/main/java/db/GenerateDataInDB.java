@@ -14,6 +14,11 @@ import java.util.concurrent.Callable;
 public class GenerateDataInDB implements Callable<GenerateDataInDB> {
     private File file = null;
     private String parentDir= null;
+    private static final String FAILED_FOLDER = "/../failed/";
+    private static final String LOG_FILE = "/../log.txt";
+    private static final String FAILED_ERROR="Loading terminated";
+    private static final String FAILED_PROGRAM_ERROR="ProgrammingError";
+    private static final String NEW_LINE="\n";
     // private static final String FILENAME = "/Users/himandhk/jsonData/";// Json output folder
 
     GenerateDataInDB(File file,String parentDir) {
@@ -55,21 +60,21 @@ public class GenerateDataInDB implements Callable<GenerateDataInDB> {
 //            System.out.printf("Output of running %s is:", Arrays.toString(args));
 
             while ((line = br.readLine()) != null) {
-                if (line.contains("Loading terminated") || line.contains("ProgrammingError")) {
-                    if(!Files.isDirectory(Paths.get(parentDir + "/../failed/"))) {
-                        Files.createDirectory(Paths.get(parentDir + "/../failed/"));
+                if (line.contains(FAILED_ERROR) || line.contains(FAILED_PROGRAM_ERROR)) {
+                    if(!Files.isDirectory(Paths.get(parentDir + FAILED_FOLDER))) {
+                        Files.createDirectory(Paths.get(parentDir + FAILED_FOLDER));
                     }
-                    Files.move(Paths.get(filename), Paths.get(parentDir+ "/../failed/" + file.getName()));
+                    Files.move(Paths.get(filename), Paths.get(parentDir+ FAILED_FOLDER + file.getName()));
                     System.out.println(filename);
-                    logStr="Failed "+filename+"\n";
+                    logStr="Failed "+filename+NEW_LINE;
                 }
                 System.out.println(line);
-                if (Files.notExists(Paths.get(parentDir+ "/../log.txt"))) {
-                    Files.createFile(Paths.get(parentDir+ "/../log.txt"));
+                if (Files.notExists(Paths.get(parentDir+ LOG_FILE))) {
+                    Files.createFile(Paths.get(parentDir+ LOG_FILE));
                 }
 
-                logStr=logStr+line+"\n";
-                Files.write(Paths.get(parentDir+ "/../log.txt"), (logStr).getBytes(), StandardOpenOption.APPEND);
+                logStr=logStr+line+NEW_LINE;
+                Files.write(Paths.get(parentDir+ LOG_FILE), (logStr).getBytes(), StandardOpenOption.APPEND);
                 logStr="";
             }
             System.out.println(process.isAlive());
